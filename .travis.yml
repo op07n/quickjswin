@@ -31,15 +31,17 @@ script:
  
   - git clone https://github.com/horhof/quickjs.git
   - cd quickjs
-  - mkdir build
-  - cd build
-  - set -e
-  - cmake -DCMAKE_BUILD_TYPE=Release .. && make && make shim
-  - sudo make install
-  - set +e
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo ldconfig; fi
-  - cd ../..
-  - set -e
-  - ./bootstrap.sh
-  - ./configure
   - make
+  - make install  
+  # - mkdir build
+  # - cd build
+  # - set -e
+  # - cmake -DCMAKE_BUILD_TYPE=Release .. && make && make shim
+  # - sudo make install
+  # - set +e
+  # - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo ldconfig; fi
+  # - cd ../..
+  # - set -e
+  # - ./bootstrap.sh
+  # - ./configure
+  # - make
